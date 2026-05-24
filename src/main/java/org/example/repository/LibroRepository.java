@@ -12,8 +12,9 @@ public class LibroRepository {
         this.libros = new ArrayList<>();
     }
 
-    public void guardarLibro(Libro libro) {
+    public Libro guardarLibro(Libro libro) {
         this.libros.add(libro);
+        return libro;
     }
 
     public Optional<Libro> buscarLibro(int id) {
