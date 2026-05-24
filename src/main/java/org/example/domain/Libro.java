@@ -80,7 +80,6 @@ public class Libro {
         } else {
             throw new IllegalStateException("No hay stock disponible");
         }
-
     }
 
     public void decrementarPrestados() {

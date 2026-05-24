@@ -15,7 +15,7 @@ public class LibroService {
     }
 
     public void registrarLibro(int id, String autor, String titulo, String descripcion, int stock){
-        Libro nuevoLibro = new Libro(id, titulo, autor, descripcion, stock);
+        Libro nuevoLibro = new Libro(id, autor, titulo, descripcion, stock);
         this.libroRepository.guardarLibro(nuevoLibro);
     }
 
