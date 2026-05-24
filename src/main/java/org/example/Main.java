@@ -1,17 +1,32 @@
 package org.example;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.example.repository.LibroRepository;
+import org.example.service.LibroService;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        LibroRepository libroRepository = new LibroRepository();
+        LibroService service = new LibroService(libroRepository);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Crear libro
+        service.registrarLibro(
+                1,
+                "Adam Smith",
+                "Java para principantes",
+                "Java es un lenguaje complejo pero acá te lo enseñamos",
+                10
+        );
+        service.registrarLibro(
+                2,
+                "Cristian de la fuente",
+                "Go para principantes",
+                "Go es un lenguaje complejo pero acá te lo enseñamos",
+                10
+        );
+        service.registrarLibro(
+                3,
+                "Erika Jardian",
+                "Python para principantes",
+                "Python es un lenguaje complejo pero acá te lo enseñamos",
+                10
+        );
     }
 }
