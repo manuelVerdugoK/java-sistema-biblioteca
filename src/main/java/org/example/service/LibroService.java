@@ -14,9 +14,10 @@ public class LibroService {
         this.libroRepository = libroRepository;
     }
 
-    public void registrarLibro(int id, String autor, String titulo, String descripcion, int stock){
+    public Libro registrarLibro(int id, String autor, String titulo, String descripcion, int stock){
         Libro nuevoLibro = new Libro(id, autor, titulo, descripcion, stock);
         this.libroRepository.guardarLibro(nuevoLibro);
+        return nuevoLibro;
     }
 
     public void devolverLibro(int id){
