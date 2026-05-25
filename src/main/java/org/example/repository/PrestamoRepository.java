@@ -10,8 +10,9 @@ public class PrestamoRepository {
 
     public PrestamoRepository() {this.prestamos = new ArrayList<>();}
 
-    public void guardarPrestamo(Prestamo prestamo){
+    public Prestamo guardarPrestamo(Prestamo prestamo){
         this.prestamos.add(prestamo);
+        return prestamo;
     }
 
     public Optional<Prestamo> buscarPrestamo(int id){

@@ -17,32 +17,6 @@ public class PrestamoService {
         this.libroRepo = libroRepo;
     }
 
-    // REGISTRAR UN NUEVO PRESTAMO
-    /* ANTIGUO...
-    public void registrarPrestamo(int id, int idLibro) {
-        // buscamos el libro para ver si existe.
-        Libro libroPrestar = libroRepo.buscarLibro(idLibro).orElseThrow(
-                () -> new LibroNoEncontrado("EL libro no existe")
-        );
-
-        Prestamo nuevoPrestamo = new Prestamo(id, libroPrestar);
-        // usamos el repository de libro pasandole el id del libro a través de la referencia de libro
-        // en el prestamo, así, obteniendo el ID.
-        libroRepo.buscarLibro(
-                nuevoPrestamo.getLibro()
-                        .getIdLibro()
-                // Como el retorno anterior es un Optional, necesitamos validar si arroja un objeto o viene vacío
-                // aprovechamos de usar la excepcion custom.
-        ).orElseThrow(
-                () -> new LibroNoEncontrado("El libro que intenta prestar no existe.")
-        );
-        // llegando acá, implica que si devolvió objeto
-        nuevoPrestamo.getLibro().incrementarPrestados();
-        prestamoRepo.guardarPrestamo(nuevoPrestamo);
-    }
-
-     */
-
     public void registrarPrestamo(int idPrestamo, int idLibro){
         // validamos que el libro a prestar exisa.
         Libro libroPrestar = libroRepo.buscarLibro(idLibro).orElseThrow(
